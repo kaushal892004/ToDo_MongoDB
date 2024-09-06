@@ -1,3 +1,8 @@
-Flask==2.3.2
-pymongo==4.8.0
-bson==0.5.10  # This is used for ObjectId in MongoDB
+dnspython==2.3.0      # This is used for handling DNS related operations (e.g., MongoDB Atlas connection)
+Flask==2.3.2          # Web framework for building the to-do web app
+Flask-Login==0.6.3    # For handling user authentication in your Flask app
+Flask-WTF==1.2.1      # WTForms extension for Flask, useful for form validation and security (CSRF)
+Jinja2==3.1.4         # Templating engine used by Flask for rendering HTML
+pymongo==4.8.0        # MongoDB driver for Python, used to interact with the MongoDB database
+Werkzeug==2.3.4       # A WSGI utility library used by Flask for routing and request handling
+WTForms==3.1.2        # For form validation and handling in your app
