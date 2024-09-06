@@ -2,17 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",
+      "src": "app.py",  // Replace this with your main app file
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "15mb"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/app.py"
+      "dest": "/app.py"  // Make sure this points to your Flask app entry file
     }
-  ]
+  ],
+  "env": {
+    "MONGO_URI": "@mongo_uri" // Environment variable for MongoDB URI (should be set in Vercel dashboard)
+  }
 }
