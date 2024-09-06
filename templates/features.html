@@ -5,9 +5,37 @@ Home
 {% endblock title %}
 
 {% block body %}
+<div class="container my-4">
+  <header>
+    <h1>Welcome to the Home Page of Your To-Do Web App!</h1>
+  </header>
+  <main>
+    <section class="features">
+      <h2>Stay organized and boost your productivity with our task management tool.</h2>
+      <p>Our To-Do Web App helps you keep track of tasks, set priorities, and manage time effectively.</p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Task Management: Easily create, edit, and delete tasks.</li>
+        <li>User Authentication: Securely log in to access your personalized to-do list.</li>
+        <li>Responsive Design: Seamlessly use on any device.</li>
+        <li>Due Dates and Reminders: Set due dates and receive reminders.</li>
+        <li>Filter and Sort: Organize tasks by status, date, or priority.</li>
+      </ul>
+    </section>
+    <section class="get-started">
+      <h3>Get Started:</h3>
+      <ol>
+        <li>Sign Up: Create a new account in just a few steps.</li>
+        <li>Log In: Access your to-do list from anywhere.</li>
+        <li>Add Tasks: Start organizing your day.</li>
+      </ol>
+    </section>
+  </main>
+</div>
+
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
         margin: 0;
         padding: 0;
@@ -20,16 +48,19 @@ Home
         color: #fff;
         padding: 1rem;
         text-align: center;
-        transition: background-color 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     header:hover {
         background-color: #0056b3;
+        transform: scale(1.02);
     }
 
     header h1 {
         margin: 0;
-        font-size: 2rem;
+        font-size: 2.5rem;
         animation: fadeIn 1s ease-out;
     }
 
@@ -37,8 +68,12 @@ Home
         padding: 1rem;
     }
 
+    main {
+        animation: fadeInUp 1s ease-out;
+    }
+
     h2, h3 {
-        color: white;
+        color: #007bff;
         animation: slideIn 1s ease-out;
     }
 
@@ -55,6 +90,11 @@ Home
 
     .features li, .get-started li {
         margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .features li:hover, .get-started li:hover {
+        color: #0056b3;
     }
 
     a {
@@ -84,32 +124,4 @@ Home
         to { opacity: 1; transform: translateY(0); }
     }
 </style>
-
-<div class="container my-4">
-  <header>
-    <h1>Welcome to the Home Page of Your To-Do Web App!</h1>
-  </header>
-  <main>
-    <section class="features">
-      <h2>Stay organized and boost your productivity with our task management tool.</h2>
-      <p>Our To-Do Web App helps you keep track of tasks, set priorities, and manage time effectively.</p>
-      <h3>Key Features:</h3>
-      <ul>
-        <li>Task Management: Easily create, edit, and delete tasks.</li>
-        <li>User Authentication: Securely log in to access your personalized to-do list.</li>
-        <li>Responsive Design: Seamlessly use on any device.</li>
-        <li>Due Dates and Reminders: Set due dates and receive reminders.</li>
-        <li>Filter and Sort: Organize tasks by status, date, or priority.</li>
-      </ul>
-    </section>
-    <section class="get-started">
-      <h3>Get Started:</h3>
-      <ol>
-        <li>Sign Up: Create a new account in just a few steps.</li>
-        <li>Log In: Access your to-do list from anywhere.</li>
-        <li>Add Tasks: Start organizing your day.</li>
-      </ol>
-    </section>
-  </main>
-</div>
 {% endblock body %}
