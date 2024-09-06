@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    header:hover {
+        background-color: #0056b3;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+        animation: fadeIn 1s ease-out;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    h2, h3 {
+        color: white;
+        animation: slideIn 1s ease-out;
+    }
+
+    .features, .get-started {
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .features ul, .get-started ol {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+
+    .features li, .get-started li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(-100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<div class="container my-4">
+  <header>
+    <h1>Welcome to the Home Page of Your To-Do Web App!</h1>
+  </header>
+  <main>
+    <section class="features">
+      <h2>Stay organized and boost your productivity with our task management tool.</h2>
+      <p>Our To-Do Web App helps you keep track of tasks, set priorities, and manage time effectively.</p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Task Management: Easily create, edit, and delete tasks.</li>
+        <li>User Authentication: Securely log in to access your personalized to-do list.</li>
+        <li>Responsive Design: Seamlessly use on any device.</li>
+        <li>Due Dates and Reminders: Set due dates and receive reminders.</li>
+        <li>Filter and Sort: Organize tasks by status, date, or priority.</li>
+      </ul>
+    </section>
+    <section class="get-started">
+      <h3>Get Started:</h3>
+      <ol>
+        <li>Sign Up: Create a new account in just a few steps.</li>
+        <li>Log In: Access your to-do list from anywhere.</li>
+        <li>Add Tasks: Start organizing your day.</li>
+      </ol>
+    </section>
+  </main>
+</div>
+{% endblock body %}

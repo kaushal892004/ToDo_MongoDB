@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ToDo List
+{% endblock title %}
+
+{% block body %}
+<div class="container my-4">
+  <h2>Add ToDo</h2>
+  <form action="/" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">ToDo Title</label>
+      <input type="text" class="form-control" name="title" id="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="Desc" class="form-label">ToDo Description</label>
+      <input type="text" class="form-control" name="Desc" id="Desc" required>
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Submit</button>
+  </form>
+
+  {% if alltodo|length == 0 %}
+  <div class="alert alert-dark mt-3" role="alert">
+    No ToDo tasks available. Please add a ToDo.
+  </div>
+  {% endif %}
+</div>
+
+{% if alltodo|length != 0 %}
+<div class="container my-4">
+  <h2>Your ToDo's</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ToDo in alltodo %}
+      <tr>
+        <th>{{ loop.index }}</th>
+        <td>{{ ToDo.title }}</td>
+        <td>{{ ToDo.Desc }}</td>
+        <td>{{ ToDo.date_created }}</td>
+        <td>
+          <a href="/update/{{ ToDo._id }}" class="btn btn-outline-dark btn-sm">Update</a>
+          <form action="/delete/{{ ToDo._id }}" method="POST" style="display: inline;">
+            <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock body %}
