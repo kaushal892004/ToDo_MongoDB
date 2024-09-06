@@ -1,9 +1,9 @@
 dnspython==2.3.0      # For handling DNS-related operations (e.g., MongoDB Atlas connection)
-Flask==2.3.2          # Web framework for building the to-do web app
+Flask==2.2.5          # Use a slightly older version to ensure compatibility
 Flask-Login==0.6.3    # For handling user authentication in your Flask app
-Flask-WTF==1.2.1      # WTForms extension for Flask, useful for form validation and security (CSRF)
-Jinja2==3.1.4         # Templating engine used by Flask for rendering HTML
+Flask-WTF==1.1.1      # Adjusted for compatibility with Flask 2.2.x
+Jinja2==3.0.3         # Compatible with Flask 2.2.x
 pymongo==4.8.0        # MongoDB driver for Python, used to interact with the MongoDB database
-Werkzeug==2.3.4       # A WSGI utility library used by Flask for routing and request handling
-WTForms==3.1.2        # For form validation and handling in your app
+Werkzeug==2.2.3       # Compatible with Flask 2.2.x
+WTForms==3.0.1        # For form validation and handling in your app
 Flask-Caching==2.0.0  # Caching extension for Flask
