@@ -1,6 +1,4 @@
-Here is an updated and comprehensive `README.md` file for your Flask-based To-Do application with authentication and MongoDB:
 
----
 
 # 📝 Flask To-Do Application  
 
